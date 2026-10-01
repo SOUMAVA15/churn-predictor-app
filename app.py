@@ -112,8 +112,8 @@ menu = st.sidebar.radio("Select Module", [
 # ---------------------------------------------------------
 # 📂 1. Data Upload & Data Quality Analysis
 # ---------------------------------------------------------
-if menu == "📂 Data Upload & Quality Analysis":
-    st.header("📂 Data Upload & 🔍 Quality Analysis")
+if menu == "📂 Data Upload ":
+    st.header("📂 Data Upload)
 
     uploaded_file = st.file_uploader("Upload CSV or Excel dataset", type=["csv", "xlsx"])
 
