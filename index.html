@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churn Predictor - AutoML & Customer Analytics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        :root {
+            --primary: #2563EB;
+            --primary-hover: #1D4ED8;
+            --bg-light: #FFFFFF;
+            --bg-card: #F8FAFC;
+            --text-main: #0F172A;
+            --text-muted: #475569;
+            --border: #E2E8F0;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .btn-launch {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .btn-launch:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 5rem 1rem 3rem;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        .grid-container {
+            max-width: 1200px;
+            margin: 2rem auto 4rem;
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            padding: 1.8rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        .card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem 1rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">🔮 Churn Predictor</a>
+        <a href="http://localhost:8501" target="_blank" class="btn-launch">Launch App 🚀</a>
+    </header>
+
+    <section class="hero">
+        <h1>Customer Churn Analytics & AutoML</h1>
+        <p>A comprehensive customer retention dashboard featuring exploratory data analysis, traditional classifiers, deep neural networks (DNN), and PyCaret AutoML.</p>
+        <a href="http://localhost:8501" target="_blank" class="btn-launch" style="padding: 1rem 2.5rem; font-size: 1.1rem;">Open Workspace</a>
+    </section>
+
+    <section class="grid-container">
+        <div class="card">
+            <h3>📂 CSV / Excel Upload</h3>
+            <p>Upload telco dataset files with automatic type inference and cleaning.</p>
+        </div>
+        <div class="card">
+            <h3>🔍 Data Quality Analysis</h3>
+            <p>Inspect missing entries, duplicate rows, data types, and unique value counts.</p>
+        </div>
+        <div class="card">
+            <h3>📊 Advanced EDA</h3>
+            <p>Histograms, payment method churn distribution plots, and correlation matrices.</p>
+        </div>
+        <div class="card">
+            <h3>🤖 PyCaret AutoML</h3>
+            <p>Run automated model comparison and hyperparameter benchmarking.</p>
+        </div>
+        <div class="card">
+            <h3>🤖 Machine Learning Suite</h3>
+            <p>Train Logistic Regression, Decision Trees, Random Forests, XGBoost, and Gradient Boosting.</p>
+        </div>
+        <div class="card">
+            <h3>🧠 Deep Learning (DNN / ANN)</h3>
+            <p>Train multi-layer Artificial Neural Networks built with TensorFlow / Keras.</p>
+        </div>
+        <div class="card">
+            <h3>📈 Model Evaluation</h3>
+            <p>Inspect Confusion Matrices, ROC-AUC curves, and Precision/Recall scores.</p>
+        </div>
+        <div class="card">
+            <h3>🔮 Single-Customer Inference</h3>
+            <p>Form-based interactive interface to predict churn probability for individual customers.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Churn Predictor Platform. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
