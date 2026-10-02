@@ -109,16 +109,18 @@ menu = st.sidebar.radio("Select Module", [
     "🔮 Single-Customer Churn Prediction"
 ])
 
-# Helper function to convert target series into numeric 0 and 1
+# Robust helper function to encode target column into numeric binary (0 and 1)
 def encode_target(series):
-    if series.dtype == 'object' or series.dtype == 'bool' or str(series.dtype).startswith('category'):
-        clean_series = series.astype(str).str.strip().str.lower()
-        mapping = {'yes': 1, 'no': 0, 'true': 1, 'false': 0, '1': 1, '0': 0, 'churn': 1, 'retained': 0}
-        mapped = clean_series.map(mapping)
-        if mapped.isnull().any():
-            return pd.factorize(series)[0]
-        return mapped.astype(int)
-    return series.astype(int)
+    # Convert PyArrow or object series to standard string
+    clean_series = series.astype(str).str.strip().str.lower()
+    mapping = {'yes': 1, 'no': 0, 'true': 1, 'false': 0, '1': 1, '0': 0, 'churn': 1, 'retained': 0}
+    
+    mapped = clean_series.map(mapping)
+    if mapped.isnull().any():
+        # Fallback to factorize if unrecognized unique labels are found
+        return pd.Series(pd.factorize(series)[0], index=series.index, dtype=int)
+    
+    return mapped.astype(int)
 
 # ---------------------------------------------------------
 # 📂 1. Data Upload & Data Quality Analysis
